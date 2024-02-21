@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<body style="background-color: #EEEEEE;" >
+    
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start bg-secondary">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input id="city" type="search" class="form-control form-control-dark text-bg-white" placeholder="Search..." aria-label="Search">
+        </form>
+        <div class="text-end">
+          <button  class="btn btn-outline-light me-2" type="submit" id="srch" >Search</button>
+        </div>
+      </div>
+
+
+    
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis">Weather App for <span id="cityName" ></span></h1>
+      </div>
+
+
+
+      
+      <main >
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center ">
+          <div class="col ">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3  bg-primary-subtle">
+                <h4 class="my-0 fw-normal">Temprature</h4>
+              </div>
+              <div class="card-body bg-primary-subtle">
+                <h1 class="card-title pricing-card-title"><span id="big_temp"></span><small class="text-body-secondary fw-light"> °C </small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Temprature is : <span id="temp" ></span> °C</li>  
+                  <li>Min-Temprature :<span id="min_temp"> </span> °C</li>
+                  <li>Max-Temprature  :<span id="max_temp"> </span> °C</li>
+                </ul>
+                <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 bg-primary-subtle">
+                <h4 class="my-0 fw-normal">Humidity Info</h4>
+              </div>
+              <div class="card-body bg-primary-subtle">
+                <h1 class="card-title pricing-card-title"><span id="big_humidity"></span><small class="text-body-secondary fw-light">%</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Humidity is <span id="humidity" > </span> % </li>
+                  <li>Sunrise <span id="sunrise"> </span> </li>
+                  <li>Sunset <span id="sunset"> </span></li>
+                  
+                </ul>
+                <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary bg-primary-subtle ">
+                <h4 class="my-0 fw-normal text-body-secondary">Wind Info</h4>
+              </div>
+              <div class="card-body bg-primary-subtle  ">
+                <h1 class="card-title pricing-card-title"><span id="big_wind"></span><small class="text-body-secondary fw-light">km/h</small></h1>
+                <ul class="list-unstyled mt-3 mb-4 ">
+                  <li>Wind Speed :<span id="wind_speed" ></span> km/h</li>
+                  <li>Wind Degree :<span id="wind_degrees" ></span> °</li>
+                  <li>Temprature(feels Like) <span id="feels_like"> </span> °C</li>
+                 
+                </ul>
+                <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <h2 class="display-6 text-center mb-4">Weathers of other cities</h2>
+    
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%;"></th>
+                <th style="width: 22%;">Temprature</th>
+                <th style="width: 22%;">Humidity</th>
+                <th style="width: 22%;">Wind Speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Bhagalpur</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Bengaluru</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+            </tbody>
+    
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Chennai</th>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Delhi</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Motihari</th>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Mumbai</th>
+                <td></td>
+                <td></td>
+                <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
